@@ -18,7 +18,7 @@ var searchHandler = function (e) {
   var cityName = searchCityEl.value;
   getCurrentWeather(cityName);
 
-// this will store the city inside of local storage only if the city already exsist in local stoarge
+  // this will store the city inside of local storage only if the city already exsist in local stoarge
   if (cities.indexOf(cityName) === -1) {
     cities.push(cityName);
     console.log(cities);
@@ -40,7 +40,7 @@ var getCurrentWeather = function (cityName) {
       return response.json();
     })
     .then(function (data) {
-      //tempEl.textContent = data.main.temp;
+    //   tempEl.textContent = data.main.temp;
       console.log(data);
     });
 };
@@ -59,7 +59,7 @@ var searchHistory = function() {
 
 searchbtnEl.addEventListener("click", searchHandler);
 
-searchHistory();
+//searchHistory();
 //fetch(currentWeather)
 //.then(function(response) {
 //return response.json();

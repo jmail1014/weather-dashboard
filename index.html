@@ -16,33 +16,83 @@
     <header class="hero bg-gradient-primary text-white">
         <h1 class="bg-dark text-white text-center mb-0">Weather Dashboard</h1>
     </header>
-    <main class="d-flex flex-row justify-space-between">
-        <div class="col-12 col-md-4">
+    <main class="d-flex flex-column flex-lg-row justify-space-between">
+        <div class="col-12 col-md-4 align-items-lg-stretch">
             <div class="col">
                 <h2>Search for a City:</h2>
                 <form id="searchForm">
-                    <label for="searchCity" class="col col-12">Search for a City</label>
                     <div>
-                        <input type="text" class="form-input" id="searchCity" autofocus="true" aria-describedby="searchCity"/>
-                        <button type="submit" id="searchBtn" class="">Search</button>
+                        <input type="search" id="searchCity" class="form-control mr-sm-2 mt-3" placeholder="Charlotte" autofocus="true" aria-describedby="searchCity"/>
+                        <button type="submit" id="searchBtn" class="btn btn-primary btn-lg btn-block mt-3">Search</button>
                         <hr class="border-dark">
                         <ul id="search-history">
                         </ul>
                     </div>
                 </form>
-                <div id="searchHistory">
-                </div>
             </div>
         </div>
         <!-- current weather -->
-        <div class="col-12 col-md-8">
-            <div id="currentWeather" class="border border-dark col">
-
-            </div>
-        
+        <div class="col-12 col-md-8 container">
+            <div id="currentWeather" class="card">
+                <div class="card-body">
+                  <h2 id="cityNameDateIcon" class="card-title"></h2>
+                  <ul>
+                      <li id="currentTemp"></li>
+                      <li id="currentWind"></li>
+                      <li id="currentHumidity"></li>
+                      <li id="currentUvIndex"></li>
+                  </ul>
+                </div>
+              </div>
             <h3 class="forecast">5-Day Forecast:</h3>
-            <div class="temp"></div>
-            <div id="searchFive" class = "row space-between col"></div>
+            <div id="searchFive" class = "row space-between">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="fiveDayDate" class="card-title col-2"></h5>
+                      <ul>
+                          <li class="fiveDayIcon"></li>
+                          <li class="fiveDayTemp"></li>
+                          <li class="fiveDayWind"></li>
+                          <li class="fiveDayHumidity"></li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="fiveDayDate" class="card-title col-2"></h5>
+                        <ul>
+                            <li class="fiveDayIcon"></li>
+                            <li class="fiveDayTemp"></li>
+                            <li class="fiveDayWind"></li>
+                            <li class="fiveDayHumidity"></li>
+                        </ul>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="fiveDayDate" class="card-title col-2"></h5>
+                        <ul>
+                            <li class="fiveDayIcon"></li>
+                            <li class="fiveDayTemp"></li>
+                            <li class="fiveDayWind"></li>
+                            <li class="fiveDayHumidity"></li>
+                        </ul>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="fiveDayDate" class="card-title col-2"></h5>
+                        <ul>
+                            <li class="fiveDayIcon"></li>
+                            <li class="fiveDayTemp"></li>
+                            <li class="fiveDayWind"></li>
+                            <li class="fiveDayHumidity"></li>
+                        </ul>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="fiveDayDate" class="card-title col-2"></h5>
+                        <ul>
+                            <li class="fiveDayIcon"></li>
+                            <li class="fiveDayTemp"></li>
+                            <li class="fiveDayWind"></li>
+                            <li class="fiveDayHumidity"></li>
+                        </ul>
+                      </div>
+            </div>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
