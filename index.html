@@ -16,7 +16,7 @@
     <header class="hero bg-gradient-primary text-white">
         <h1 class="bg-dark text-white text-center mb-0">Weather Dashboard</h1>
     </header>
-    <main class="d-flex flex-column flex-lg-row justify-space-between">
+    <main class="d-flex flex-column flex-lg-row justify-content-between">
         <div class="col-12 col-md-4 align-items-lg-stretch">
             <div class="col">
                 <h2>Search for a City:</h2>
@@ -26,6 +26,7 @@
                         <button type="submit" id="searchBtn" class="btn btn-primary btn-lg btn-block mt-3">Search</button>
                         <hr class="border-dark">
                         <ul id="search-history">
+                            <!-- <li><button class="btn btn-secondary btn-lg btn-block"></button></li> -->
                         </ul>
                     </div>
                 </form>
@@ -36,6 +37,7 @@
             <div id="currentWeather" class="card">
                 <div class="card-body">
                   <h2 id="cityNameDateIcon" class="card-title"></h2>
+                  <!-- <img src="http://openweathermap.org/img/wn/10d.png"/> -->
                   <ul>
                       <li id="currentTemp"></li>
                       <li id="currentWind"></li>

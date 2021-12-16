@@ -9,9 +9,10 @@ var apiKey = "a429567d899ab3aa7bff6aef548ae46b";
 var tempEl = document.querySelector(".temp");
 var searchbtnEl = document.querySelector("#searchBtn");
 var searchCityEl = document.querySelector("#searchCity");
-var searchHistoryEl = document.querySelector("#search-history");
+var searchHistoryEl = $("#search-history");
 console.log(searchHistoryEl);
 var cities = [];
+var currentDate = moment().format("MMM Do YY");
 
 var searchHandler = function (e) {
   e.preventDefault();
@@ -41,25 +42,31 @@ var getCurrentWeather = function (cityName) {
     })
     .then(function (data) {
     //   tempEl.textContent = data.main.temp;
+      // call api for one onecall api using lat long peramiters data.cord.lat.lon
       console.log(data);
+      $("#cityNameDateIcon").text(cityName + " " + currentDate);
+      $("#cityNameDateIcon").append(`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png"/>`);
+      $("#currentTemp").text(data.main.temp);
+      $("#currentWind").text(data.wind);
+      $("#currentHumidity").text(data.main.humidity);
+      // $("#currentUvIndex").text(data.)
     });
 };
-var searchHistory = function() {
+function searchHistory() {
     cities = JSON.parse(localStorage.getItem("cities"));
 
     for (let i = 0; i < cities.length; i++) {
         console.log(cities[i]);   
 
-        var listEl = document.createElement('li');
-        listEl.textContent = cities[i];
-        searchHistoryEl.appendChild(listEl);
+        searchHistoryEl.append(`<li><button class="btn btn-secondary btn-lg btn-block">${cities[i]}</button></li><br>`);
     }
 
 };
 
 searchbtnEl.addEventListener("click", searchHandler);
 
-//searchHistory();
+searchHistory();
+
 //fetch(currentWeather)
 //.then(function(response) {
 //return response.json();
